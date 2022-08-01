@@ -11,7 +11,7 @@ its affiliates is strictly prohibited. -->
 # Graph Neural Networks for Channel Decoding
 
 Implementation of the graph neural network (GNN)-based decoder experiments from
-[[A *PLACEHOLDER*]](*PLACEHOLDER*) using the
+[*Graph Neural Networks for Channel Decoding* [A]](https://arxiv.org/pdf/2207.14742.pdf) using the
 [Sionna link-level simulator](https://nvlabs.github.io/sionna/).
 
 ## Abstract
@@ -30,20 +30,20 @@ The following notebooks may serve as starting point:
 
 * [GNN_decoder_standalone.ipynb](GNN_decoder_standalone.ipynb) : Implements a standalone tutorial-style GNN-based decoder. This notebook can be directly executed in Google Colab. Please note that for the sake of simplicity not all functions of the library are available; please use the notebooks below for more sophisticated experiments.
 * [GNN_decoder_universal.ipynb](GNN_decoder_universal.ipynb) : Implements a universal GNN-based decoder that can be configured for own experiments.
-* [GNN_decoder_BCH.ipynb](GNN_decoder_BCH.ipynb) : Trains the GNN-decoder for the (63,45) BCH code. Reproduces Fig. 3 in [[A *PLACEHOLDER*]](*PLACEHOLDER*)
-* [GNN_decoder_reg_LDPC.ipynb](GNN_decoder_reg_LDPC.ipynb) : Trains the GNN-decoder for regular (3,6) LDPC codes. Reproduces Fig. 4 in [[A *PLACEHOLDER*]](*PLACEHOLDER*)
-* [GNN_decoder_LDPC_5G.ipynb](GNN_decoder_LDPC_5G.ipynb) : Trains the GNN-decoder to decode 5G NR LDPC codes. Reproduces Fig. 5 in [[A *PLACEHOLDER*]](*PLACEHOLDER*)
+* [GNN_decoder_BCH.ipynb](GNN_decoder_BCH.ipynb) : Trains the GNN-decoder for the (63,45) BCH code. Reproduces Fig. 3 in [[A]](https://arxiv.org/pdf/2207.14742.pdf)
+* [GNN_decoder_reg_LDPC.ipynb](GNN_decoder_reg_LDPC.ipynb) : Trains the GNN-decoder for regular (3,6) LDPC codes. Reproduces Fig. 4 in [[A]](https://arxiv.org/pdf/2207.14742.pdf)
+* [GNN_decoder_LDPC_5G.ipynb](GNN_decoder_LDPC_5G.ipynb) : Trains the GNN-decoder to decode 5G NR LDPC codes. Reproduces Fig. 5 in [[A]](https://arxiv.org/pdf/2207.14742.pdf)
 
 These notebooks rely on the following modules:
 
 * [gnn.py](gnn.py) : Implements the GNN-based decoder and utility functions.
 * [wbp.py](wbp.py) : Implements the weighted BP decoder and training for comparison [[B]](https://arxiv.org/abs/1607.04793). See [Sionna example notebook](https://nvlabs.github.io/sionna/examples/Weighted_BP_Algorithm.html) for further details.
 
-In addition, pre-trained weights are available in the [weights/](weights/) directory. This allows reproducing the results from [[A *PLACEHOLDER*]](*PLACEHOLDER*) without retraining the neural network. The result of each simulation can be found in [results/](results/).
+In addition, pre-trained weights are available in the [weights/](weights/) directory. This allows reproducing the results from [[A]](https://arxiv.org/pdf/2207.14742.pdf) without retraining the neural network. The result of each simulation can be found in [results/](results/).
 
 ## References
 
-[A] [S. Cammerer, J. Hoydis, F. Aït Aoudia, and A. Keller, "Graph Neural Networks for Channel Decoding", 2022](*PLACEHOLDER*)
+[A] [S. Cammerer, J. Hoydis, F. Aït Aoudia, and A. Keller, "Graph Neural Networks for Channel Decoding", 2022](https://arxiv.org/pdf/2207.14742.pdf)
 
 [B] [E. Nachmani, Y. Beery, D. Burshtein, "Learning to Decode Linear Codes Using Deep Learning", Allerton, 2016](https://arxiv.org/abs/1607.04793)
 
