@@ -20,7 +20,7 @@ In this work, we propose a fully differentiable graph neural network (GNN)-based
 
 ## Setup
 
-Running this code requires [Sionna 0.10](https://nvlabs.github.io/sionna/).
+Running this code requires [Sionna 0.11](https://nvlabs.github.io/sionna/).
 To run the notebooks on your machine, you also need [Jupyter](https://jupyter.org).
 We recommend Ubuntu 20.04, Python 3.8, and TensorFlow 2.8.
 
