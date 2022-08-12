@@ -60,14 +60,13 @@ class WeightedBP(tf.keras.Model):
     """
     def __init__(self, pcm, num_iter=5):
         super().__init__()
-
+        print("Note that WBP requires Sionna > v0.11.")
         # init components
         self.decoder = LDPCBPDecoder(pcm,
                                      num_iter=1, # iterations are done via
                                      # outer loop (to access intermediate
                                      # results for multi-loss)
-                                     keep_state=True, # decoder stores internal
-                                     # messages after call
+                                     stateful=True,
                                      hard_out=False, # we need to access
                                      # soft-information
                                      cn_type="boxplus",
@@ -99,14 +98,13 @@ class WeightedBP(tf.keras.Model):
 
         # implement multi-loss as proposed by Nachmani et al.
         loss = 0
+        msg_vn = None
         for _ in range(self._num_iter):
-            c_hat = self.decoder(llr) # perform one decoding iteration; decoder
+            c_hat, msg_vn = self.decoder((llr, msg_vn)) # perform one decoding iteration; decoder
             # returns soft-values
             loss += self._bce(c, c_hat)  # add loss after each iteration
 
         loss /= self._num_iter # scale loss by number of iterations
-
-        self.decoder.reset_state() # prepare decoder for next batch of codewords
 
         return c, c_hat, loss
 
